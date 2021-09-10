@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../img/bed.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.navbars {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lines1,
+.lines2,
+.lines3 {
+  width: 23px;
+  height: 3px;
+  margin: 5px;
+  background: rgb(26, 101, 110);
+  z-index: 10;
+
+  transition: 0.5s;
+}
+
+
+.navbars .btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.changes .lines1{ 
+  transform: rotate(45deg) translate(5px,6px);
+  z-index: 10;
+}
+
+.changes .lines2{
+  opacity: 0;
+  z-index: 10;
+}
+
+.changes .lines3{
+  transform: rotate(-45deg) translate(5px,-6px);
+  z-index: 10;
+}
+
+.logos{
+  text-decoration: none;
+  font-family: 'Allison', cursive;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.searchs{
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.searchs .inputs{
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg,violet,#bf26a6);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.searchs .inputs:focus{
+  outline: none;
+}
+
+.searchs .inputs::placeholder{
+  font-family: sans-serif;
+  color: aliceblue;
+  font-size: 18px;
+}
+
+.searchs .search-btns{
+  width: 50px;
+  height: 50px;
+  background: violet;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top:0;
+  left: 0;
+
+  transition: all 0.3s ease;
+}
+
+.search-btns:focus{
+  outline: none;
+}
+
+.searchs.active .inputs{
+  width: 200px;
+  border-radius: 10px 0 0 10px;
+}
+
+.searchs.active .search-btns{
+  transform: translate(199px);
+  border-radius: 0 10px 10px 0;
+}
+
+.banners{
+  width: 50%;
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+.banners .text{
+  height: 250px;
+  color: aliceblue;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align:end;
+
+}
+
+.banners .autocounts{
+  /* margin-top: 220px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-containers{
+  text-align: center;
+}
+
+.count-containers i{
+  color: #bf26a6;
+}
+
+.count-containers .counters{
+  color: aliceblue;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 5px;
+}
+
+.count-containers span{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.menulist-container{
+  font-family: 'Noto Sans KR', sans-serif;
+  background: black;
+
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: none;
+
+  transition: 1s;
+}
+
+.menulist-container.show{
+  display: block;
+
+  background: rgba(0,0,0,1);
+
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: 1s;
+}
+
+.menulist-container.show .menulist{
+      /*****/
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menulist-container.show .menulist ul{
+      /*****/
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0,0,0,0.3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menulist-container.show .menulist ul li{
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+}
+
+.menulist ul li a{
+  text-decoration: none;
+  color: white;
+}
